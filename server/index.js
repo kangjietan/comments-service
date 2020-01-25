@@ -1,15 +1,13 @@
-// Dependencies
-const path = require('path');
+// Setup
 const express = require('express');
-const app = express();
-
 const morgan = require('morgan');
+const path = require('path');
+
+const app = express();
 
 // Middleware
 app.use(express.static(path.join(__dirname, '../client/public')));
 app.use(morgan('dev'));
-
-console.log(__dirname);
 
 // Initialisation
 const port = 3000;

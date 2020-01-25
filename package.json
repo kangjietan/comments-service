@@ -13,7 +13,8 @@
   "scripts": {
     "test": "",
     "bundle": "webpack -d --watch",
-    "server": "nodemon server/index.js"
+    "server": "nodemon server/index.js",
+    "mongo-seed": "node db/index.js"
   },
   "dependencies": {
     "@babel/cli": "^7.8.3",
