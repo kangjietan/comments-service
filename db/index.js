@@ -1,6 +1,8 @@
 // Setup
 const mongoose = require('mongoose');
 const modelUtility = require('./modelUtility.js');
+
+// Connect to database
 mongoose.connect(
   'mongodb://localhost:27017/soundclone',
   {
@@ -16,6 +18,8 @@ var commentSchema = mongoose.Schema({
     {
       userData: {
         username: String,
+        displayName: String,
+        profileURL: String,
         profilePicture: String,
         followCount: Number
       },
