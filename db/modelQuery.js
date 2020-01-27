@@ -5,7 +5,7 @@ const commentModel = require('./index.js');
 module.exports = {
   getAllComments: (callback) => {
     commentModel.find({}, { 'comments': 1 }, (err, docs) => {
-      callback(docs)
+      callback(docs);
     });
   }
 };

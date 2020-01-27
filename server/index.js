@@ -11,8 +11,8 @@ const app = express();
 app.use(express.static(path.join(__dirname, '../client/public')));
 app.use(morgan('dev'));
 
-// GET requests(routes/routesGET.js)
-app.use('/api', routesGET);
+// GET requests (routes/routesGET.js)
+app.use('/api', [routesGET]);
 
 // Initialisation
 const port = 3001;
