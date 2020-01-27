@@ -11,6 +11,8 @@ var modelUtility = {
         {
           userData: {
             username: 'destiny',
+            displayName: 'Destiny',
+            profileURL: 'https://soundcloud.com/shibasan',
             profilePicture: 'https://i.redd.it/kqgh408o6tc41.jpg',
             followCount: 194824
           },
@@ -23,6 +25,8 @@ var modelUtility = {
         {
           userData: {
             username: 'vtsu3',
+            displayName: 'vtsu3',
+            profileURL: 'https://soundcloud.com/shibasan',
             profilePicture: 'https://i.redd.it/kqgh408o6tc41.jpg',
             followCount: 40
           },
@@ -35,6 +39,8 @@ var modelUtility = {
         {
           userData: {
             username: 'tarzaned',
+            displayName: 'Julian F',
+            profileURL: 'https://soundcloud.com/shibasan',
             profilePicture: 'https://i.redd.it/kqgh408o6tc41.jpg',
             followCount: 9914
           },
@@ -47,6 +53,8 @@ var modelUtility = {
         {
           userData: {
             username: 'kang1099jt',
+            displayName: 'Kang J Tan',
+            profileURL: 'https://soundcloud.com/shibasan',
             profilePicture: 'https://i.redd.it/kqgh408o6tc41.jpg',
             followCount: 64
           },
@@ -59,6 +67,8 @@ var modelUtility = {
         {
           userData: {
             username: 'tyler1',
+            displayName: 'Tyler Steinkamp One',
+            profileURL: 'https://soundcloud.com/shibasan',
             profilePicture: 'https://static-cdn.jtvnw.net/jtv_user_pictures/f3591dbe4ee3d94b-profile_image-70x70.png',
             followCount: 9194205
           },

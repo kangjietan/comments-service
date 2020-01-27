@@ -10,5 +10,5 @@ app.use(express.static(path.join(__dirname, '../client/public')));
 app.use(morgan('dev'));
 
 // Initialisation
-const port = 3000;
+const port = 3001;
 app.listen(port, () => { console.log(`listening on http://localhost:${port}`); });

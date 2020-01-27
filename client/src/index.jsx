@@ -1,11 +1,6 @@
+// DO NOT MODIFY
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-const App = (props) => {
-
-  return (
-    <div className="container">Hello world!</div>
-  );
-};
+import App from './components/App.jsx';
 
 ReactDOM.render(<App />, document.getElementById('root'));
