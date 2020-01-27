@@ -1,7 +1,5 @@
-// Setup
-const commentModel = require('./index.js');
-
 // Utility function module for MongoDB models
+
 var modelUtility = {
   // Seeding function
   seedScript: function(model) {
@@ -10,7 +8,7 @@ var modelUtility = {
       comments: [
         {
           userData: {
-            username: 'destiny',
+            username: 'destiny123',
             displayName: 'Destiny',
             profileURL: 'https://soundcloud.com/shibasan',
             profilePicture: 'https://i.redd.it/kqgh408o6tc41.jpg',
@@ -20,7 +18,7 @@ var modelUtility = {
             postDate: '1/24/20',
             timestamp: 104
           },
-          commentBody: 'this is an awesome song bro, keep up these bopping beats and those rickety rhymes!'
+          commentBody: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
         },
         {
           userData: {
@@ -34,12 +32,12 @@ var modelUtility = {
             postDate: '1/24/20',
             timestamp: 42
           },
-          commentBody: 'epic song mate'
+          commentBody: 'hmmm not too sure about this song mate, sounds kinda whack tbh.'
         },
         {
           userData: {
-            username: 'tarzaned',
-            displayName: 'Julian F',
+            username: 'hongkongbboy',
+            displayName: 'Kinny Boy 149',
             profileURL: 'https://soundcloud.com/shibasan',
             profilePicture: 'https://i.redd.it/kqgh408o6tc41.jpg',
             followCount: 9914
@@ -48,7 +46,7 @@ var modelUtility = {
             postDate: '1/24/20',
             timestamp: 1
           },
-          commentBody: 'rank1 s6 btw'
+          commentBody: 'ok bro, i fw dis cuh!! XDDDDDD XDDXDXXD XDXDXD'
         },
         {
           userData: {
@@ -76,7 +74,7 @@ var modelUtility = {
             postDate: '1/23/20',
             timestamp: 3
           },
-          commentBody: 'THAIYS IS A FUJKCOIRN TRSAH SONG HAHASFHUDAHAH'
+          commentBody: 'this song is trash bro, delete it rn >:[ '
         }
       ],
     });

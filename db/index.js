@@ -32,8 +32,9 @@ var commentSchema = mongoose.Schema({
   ],
 });
 
-// Compile the model from the schema
+// Compile and export the model from the schema
 const commentModel = mongoose.model('commentdocuments', commentSchema);
+module.exports = commentModel;
 
 // Seed the database
 modelUtility.seedScript(commentModel);

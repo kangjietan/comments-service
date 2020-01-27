@@ -1,6 +1,6 @@
 # comments-main
 
-> The comments-section service for SoundClone
+The comments-section service for SoundClone
 
 ## Related Projects
 
@@ -8,31 +8,50 @@
   - https://github.com/SoundClone/Main-Media-Player
   - https://github.com/SoundClone/Post-Comments-and-Buttons
 
-## Table of Contents
-
-1. [Usage](#Usage)
-1. [Requirements](#requirements)
-1. [Development](#development)
-
-## Usage
-
-TODO: Some usage instructions
-
 ## Requirements
 
-An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
+- MongoDB 4.2.2 or later
+- NodeJS 8 or later
+- Brain
 
-- Node 6.13.0
-- Etc.
-
-## Development
+## Usage
 
 ### Installing Dependencies
 
 From within the root directory:
 
 ```sh
-npm install -g webpack
-npm install
+$ npm install -g webpack
+
+$ npm install
 ```
 
+### Seeding database
+
+1. Start MongoDB shell session
+
+```sh
+$ mongo
+```
+2. Create the ```soundclone``` database
+
+```sh
+> use soundclone
+```
+
+You can now run the seed script in a new terminal with
+
+```sh
+$ npm run mongo-seed
+```
+
+### Run app
+
+Bundle files & start server
+
+```sh
+$ npm run bundle
+$ npm run server
+```
+
+Open in http://localhost:3001/
