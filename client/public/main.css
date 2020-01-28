@@ -1,4 +1,14 @@
 #root {
-  padding: 8% 4% 8% 4%;
-  border: 1px solid #4CAF50;
+  font: 12px/1.4 'Lucida Grande';
+  color: #333;
 }
+
+.row {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0px;
+}
+
+/* #cmt-container {
+  font: 12px/1.4 Lucida Grande;
+} */

@@ -1,5 +1,6 @@
 // Setup
 import React from 'react';
+import CmtListItem from './CmtListItem.jsx';
 import styled from 'styled-components';
 const axios = require('axios');
 
@@ -14,7 +15,7 @@ class CmtList extends React.Component {
     super(props);
 
     this.state = {
-      comments: null,
+      comments: [],
       totalComments: null
     };
 
@@ -46,9 +47,17 @@ class CmtList extends React.Component {
 
   render () {
     return (
-      <TotalCmts>
-        <span><i className="tiny material-icons">chat_bubble</i>{this.state.totalComments} comments</span>
-      </TotalCmts>
+      <div>
+        <TotalCmts>
+          <span><i className="tiny material-icons" id="cmt-i" >chat_bubble</i> {this.state.totalComments} comments</span>
+        </TotalCmts>
+
+        <div>
+          {this.state.comments.map((el, idx) => {
+            return <CmtListItem cmt={el} key={idx} />;
+          })}
+        </div>
+      </div>
     );
   }
 }
