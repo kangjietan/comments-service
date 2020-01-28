@@ -1,6 +1,6 @@
 // Setup
 import React from 'react';
-import CmtListItem from './CmtListItem.jsx';
+import CmtListItem from './CmtListItem/CmtListItem.jsx';
 import styled from 'styled-components';
 const axios = require('axios');
 
