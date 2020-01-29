@@ -14,28 +14,25 @@
     "test": "",
     "bundle": "webpack -d --watch",
     "server": "nodemon server/index.js",
-    "mongo-seed": "node db/index.js"
+    "mongo-seed": "node db/seedScript.js"
   },
   "dependencies": {
     "@babel/cli": "^7.8.3",
     "@babel/core": "^7.8.3",
+    "axios": "^0.19.2",
     "babel-loader": "^8.0.6",
     "express": "^4.17.1",
     "mongoose": "^5.8.9",
     "nodemon": "^2.0.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "styled-components": "^5.0.0",
     "webpack": "^4.41.5"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.8.3",
     "@babel/preset-react": "^7.8.3",
     "eslint": "^6.8.0",
-    "eslint-config-airbnb": "^18.0.1",
-    "eslint-plugin-import": "^2.20.0",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-react": "^7.18.0",
-    "eslint-plugin-react-hooks": "^1.7.0",
     "webpack-cli": "^3.3.10"
   }
 }

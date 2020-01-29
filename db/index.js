@@ -1,18 +1,17 @@
 // Setup
 const mongoose = require('mongoose');
-const modelUtility = require('./modelUtility.js');
 
 // Connect to database
 mongoose.connect(
   'mongodb://localhost:27017/soundclone',
   {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
   }
 );
 
 // Create schema
-var commentSchema = mongoose.Schema({
+const commentSchema = mongoose.Schema({
   songId: Number,
   comments: [
     {
@@ -21,19 +20,19 @@ var commentSchema = mongoose.Schema({
         displayName: String,
         profileURL: String,
         profilePicture: String,
-        followCount: Number
+        followCount: Number,
       },
       timeData: {
         postDate: String,
-        timestamp: Number
+        timestamp: Number,
       },
-      commentBody: String
-    }
+      commentBody: String,
+    },
   ],
 });
 
 // Compile the model from the schema
 const commentModel = mongoose.model('commentdocuments', commentSchema);
 
-// Seed the database
-modelUtility.seedScript(commentModel);
+// Export model
+module.exports = commentModel;
