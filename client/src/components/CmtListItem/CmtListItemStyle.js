@@ -44,7 +44,7 @@ export const LightTextSpan = styled.span`
   float: right;
 `;
 
-export const XLightTextSpan = styled.span`
+export const Xlt = styled.span`
   color: #ccc;
   font-size: 11px;
 `;
