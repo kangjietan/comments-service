@@ -2,7 +2,7 @@
 import React from 'react';
 import Username from '../Username.jsx';
 import ProfilePreview from '../ProfilePreview/ProfilePreview.jsx';
-import { RedDiv, AvatarDiv, CommentDiv, Comment, LightTextA, Xlt, Icon, FlexContainer, LightTextSpan, ProfilePreviewContainer } from './CmtListItemStyle.js';
+import { RedDiv, AvatarDiv, CommentDiv, Comment, LightTextA, Xlt, Icon, FlexContainer, Lts, ProfilePreviewContainer } from './CmtListItemStyle.js';
 
 // CmtListItem
 class CmtListItem extends React.Component {
@@ -54,7 +54,7 @@ class CmtListItem extends React.Component {
 
         <CommentDiv>
           <RedDiv>
-            <div><Username handleHov={this.onUserOrAvatarHover} cmt={cmt} /> <Xlt> at </Xlt><LightTextA>{this.friendlyTimestamp(cmt.timeData.timestamp)}</LightTextA><Xlt>:</Xlt><LightTextSpan>{cmt.timeData.postDate}</LightTextSpan></div>
+            <div><Username handleHov={this.onUserOrAvatarHover} cmt={cmt} /> <Xlt> at </Xlt><LightTextA>{this.friendlyTimestamp(cmt.timeData.timestamp)}</LightTextA><Xlt>:</Xlt><Lts>{cmt.timeData.postDate}</Lts></div>
           </RedDiv>
 
           <RedDiv className="">{cmt.commentBody}</RedDiv>

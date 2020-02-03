@@ -37,7 +37,7 @@ export const LightTextA = styled.a`
     }
 `;
 
-export const LightTextSpan = styled.span`
+export const Lts = styled.span`
   color: #999;
   font-size: 12px;
   padding-right: 7px;
