@@ -1,7 +1,6 @@
 // Setup
 import React from 'react';
 import Username from '../Username.jsx';
-import { OverlayTrigger, Button } from 'react-bootstrap';
 import ProfilePreview from '../ProfilePreview/ProfilePreview.jsx';
 import { RedDiv, AvatarDiv, CommentDiv, Comment, LightTextA, Xlt, Icon, FlexContainer, Lts, ProfilePreviewContainer } from './CmtListItemStyle.js';
 
@@ -48,14 +47,6 @@ class CmtListItem extends React.Component {
 
     return (
       <FlexContainer>
-
-        <OverlayTrigger
-          placement="right"
-          delay={{ show: 250, hide: 400 }}
-          overlay={renderTooltip}
-        >
-          <Button variant="success">Hover me to see</Button>
-        </OverlayTrigger>
 
         <AvatarDiv trigger="click" placement="right" overlay={ProfilePreview} className="valign-wrapper avdiv">
           <Icon onMouseOver={this.onUserOrAvatarHover} className="responsive-img circle" src={cmt.userData.profilePicture}/>
