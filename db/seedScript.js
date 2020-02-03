@@ -1,4 +1,5 @@
 const commentModel = require('./index.js');
+var faker = require('faker');
 
 commentModel.create({
   songId: 1,
@@ -6,58 +7,58 @@ commentModel.create({
     {
       userData: {
         username: 'DESTINY55',
-        displayName: 'Destiny',
+        displayName: faker.name.findName(),
         profileURL: 'https://soundcloud.com/shibasan',
-        profilePicture: 'https://i.redd.it/kqgh408o6tc41.jpg',
+        profilePicture: faker.image.avatar(),
         followCount: 194824,
       },
       timeData: {
         postDate: '1/24/20',
-        timestamp: 104,
+        timestamp: faker.random.number(180),
       },
-      commentBody: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+      commentBody: faker.lorem.sentences(),
     },
     {
       userData: {
         username: 'vtsu3',
-        displayName: 'vtsu3',
+        displayName: faker.name.findName(),
         profileURL: 'https://soundcloud.com/shibasan',
-        profilePicture: 'https://i.redd.it/kqgh408o6tc41.jpg',
+        profilePicture: faker.image.avatar(),
         followCount: 40,
       },
       timeData: {
         postDate: '1/24/20',
-        timestamp: 42,
+        timestamp: faker.random.number(180),
       },
-      commentBody: 'hmmm not too sure about this song mate, sounds kinda whack tbh.',
+      commentBody: faker.lorem.sentences(),
     },
     {
       userData: {
         username: 'hongkongbboy',
-        displayName: 'Kinny Boy 149',
+        displayName: faker.name.findName(),
         profileURL: 'https://soundcloud.com/shibasan',
-        profilePicture: 'https://i.redd.it/kqgh408o6tc41.jpg',
+        profilePicture: faker.image.avatar(),
         followCount: 9914,
       },
       timeData: {
         postDate: '1/24/20',
-        timestamp: 1,
+        timestamp: faker.random.number(180),
       },
-      commentBody: 'ok bro, i fw dis cuh!! XDDDDDD XDDXDXXD XDXDXD',
+      commentBody: faker.lorem.sentences(),
     },
     {
       userData: {
         username: 'kang1099jt',
-        displayName: 'Kang J Tan',
+        displayName: faker.name.findName(),
         profileURL: 'https://soundcloud.com/shibasan',
-        profilePicture: 'https://i.redd.it/kqgh408o6tc41.jpg',
+        profilePicture: faker.image.avatar(),
         followCount: 64,
       },
       timeData: {
         postDate: '1/14/20',
-        timestamp: 120,
+        timestamp: faker.random.number(180),
       },
-      commentBody: 'sweet tunes brother, what shampoo do you use?',
+      commentBody: faker.lorem.sentences(),
     },
     {
       userData: {
@@ -69,9 +70,9 @@ commentModel.create({
       },
       timeData: {
         postDate: '1/23/20',
-        timestamp: 3,
+        timestamp: faker.random.number(180),
       },
-      commentBody: 'this song is trash bro, delete it rn >:[ ',
+      commentBody: faker.lorem.sentences(),
     },
   ],
 });

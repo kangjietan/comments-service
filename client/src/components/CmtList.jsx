@@ -2,12 +2,17 @@
 import React from 'react';
 import CmtListItem from './CmtListItem/CmtListItem.jsx';
 import styled from 'styled-components';
+import { CommentDiv } from './CmtListItem/CmtListItemStyle.js';
 const axios = require('axios');
 
 const TotalCmts = styled.div`
   color: #999;
-  padding: 0px 0px 7px 0px;
+  margin-bottom: 10px;
   border-bottom: 1px solid #d1d1d1;
+`;
+
+// Identify content containers for or infinite scroll
+const CmtContainer = styled.div`
 `;
 
 class CmtList extends React.Component {
@@ -52,11 +57,11 @@ class CmtList extends React.Component {
           <span><i className="tiny material-icons" id="cmt-i" >chat_bubble</i> {this.state.totalComments} comments</span>
         </TotalCmts>
 
-        <div>
+        <CommentDiv>
           {this.state.comments.map((el, idx) => {
             return <CmtListItem cmt={el} key={idx} />;
           })}
-        </div>
+        </CommentDiv>
       </div>
     );
   }

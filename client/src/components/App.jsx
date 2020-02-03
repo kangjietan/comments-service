@@ -4,7 +4,7 @@ import CmtList from './CmtList.jsx';
 const App = () => {
   return (
     <div>
-      <CmtList />
+      <CmtList id="CmtList"/>
     </div>
   );
 };

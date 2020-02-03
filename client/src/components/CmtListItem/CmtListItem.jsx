@@ -1,12 +1,20 @@
 // Setup
 import React from 'react';
-import { RedDiv, Comment, LightTextA, XLightTextSpan, Icon } from './CmtListItemStyle.js';
+import ProfilePreview from '../ProfilePreview/ProfilePreview.jsx';
+import { RedDiv, AvatarDiv, CommentDiv, Comment, LightTextA, XLightTextSpan, Icon, FlexContainer, LightTextSpan, ProfilePreviewContainer } from './CmtListItemStyle.js';
 
 // CmtListItem
 class CmtListItem extends React.Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      // Toggle if user hovers, for <ProfilePreview /> rendering
+      isHovered: false
+    };
+
+    // fn bindings
+    this.onUserOrAvatarHover = this.onUserOrAvatarHover.bind(this);
     this.friendlyTimestamp = this.friendlyTimestamp.bind(this);
   }
 
@@ -22,25 +30,36 @@ class CmtListItem extends React.Component {
     timestamp < 10 ? sec = '0' + timestamp.toString() : sec = timestamp;
 
     return `${min}:${sec}`;
+
+  }
+
+  onUserOrAvatarHover() {
+    this.setState({
+      isHovered: !this.state.isHovered
+    });
   }
 
   render() {
     let cmt = this.props.cmt;
+    // console.log(cmt);
+    console.log(this.state.isHovered);
 
     return (
-      <Comment>
-        <RedDiv className="col s1 valign-wrapper">
+      <FlexContainer>
+
+        <AvatarDiv className="valign-wrapper">
           <Icon className="responsive-img circle" src={cmt.userData.profilePicture} />
-        </RedDiv>
-        <div className="row">
-          <RedDiv className="col s3">
-            <LightTextA href={cmt.userData.profileURL} target="_blank" >{cmt.userData.displayName}</LightTextA><XLightTextSpan> at </XLightTextSpan><LightTextA>{this.friendlyTimestamp(cmt.timeData.timestamp)}</LightTextA><XLightTextSpan>:</XLightTextSpan>
-          </RedDiv><RedDiv className="col s9">placeholder</RedDiv>
+        </AvatarDiv>
 
-          <RedDiv className="offset s1">{cmt.commentBody}</RedDiv>
+        <CommentDiv>
+          <RedDiv>
+            <div><LightTextA onMouseOver={this.onUserOrAvatarHover} href={cmt.userData.profileURL} target="_blank" >{cmt.userData.displayName}</LightTextA><XLightTextSpan> at </XLightTextSpan><LightTextA>{this.friendlyTimestamp(cmt.timeData.timestamp)}</LightTextA><XLightTextSpan>:</XLightTextSpan><LightTextSpan>{cmt.timeData.postDate}</LightTextSpan></div>
+          </RedDiv>
 
-        </div>
-      </Comment>
+          <RedDiv className="">{cmt.commentBody}</RedDiv>
+
+        </CommentDiv>
+      </FlexContainer>
     );
   }
 }
