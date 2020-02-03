@@ -34,6 +34,7 @@ export const LightTextA = styled.a`
   font-size: 12px;
   &:hover {
       color: #333;
+      text-decoration: none;
     }
 `;
 

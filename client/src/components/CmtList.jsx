@@ -1,5 +1,6 @@
 // Setup
 import React from 'react';
+import ProfilePreview from '../components/ProfilePreview/ProfilePreview.jsx';
 import CmtListItem from './CmtListItem/CmtListItem.jsx';
 import styled from 'styled-components';
 import { CommentDiv } from './CmtListItem/CmtListItemStyle.js';
