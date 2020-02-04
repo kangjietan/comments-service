@@ -1,8 +1,10 @@
 // Setup
 import React from 'react';
-import CmtListItem from './CmtListItem/CmtListItem.jsx';
 import styled from 'styled-components';
+
+import CmtListItem from './CmtListItem/CmtListItem.jsx';
 import { CommentDiv } from './CmtListItem/CmtListItemStyle.js';
+
 const axios = require('axios');
 
 const TotalCmts = styled.div`
@@ -21,7 +23,8 @@ class CmtList extends React.Component {
 
     this.state = {
       comments: [],
-      totalComments: null
+      totalComments: null,
+      blockFirstRender: false
     };
 
     this.getComments = this.getComments.bind(this);
@@ -32,7 +35,6 @@ class CmtList extends React.Component {
     this.getComments();
   }
 
-  // Get all comments for song (bugfix on Trello)
   getComments() {
     axios.get('/api/comments')
       .then((res) => {
@@ -43,7 +45,6 @@ class CmtList extends React.Component {
       });
   }
 
-  // Calculate total comments
   calcTotalComments(res) {
     this.setState({
       totalComments: res[0].comments.length
@@ -51,6 +52,7 @@ class CmtList extends React.Component {
   }
 
   render () {
+    console.log('lifecycle from CmtList intiated!');
     return (
       <div>
         <TotalCmts>
@@ -59,7 +61,7 @@ class CmtList extends React.Component {
 
         <CommentDiv>
           {this.state.comments.map((el, idx) => {
-            return <CmtListItem cmt={el} key={idx} />;
+            return <CmtListItem cmt={el} key={idx} aid={`A${idx}`} uid={`U${idx}`} />;
           })}
         </CommentDiv>
       </div>

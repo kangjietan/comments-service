@@ -1,24 +1,18 @@
 // Setup
 import React from 'react';
-import ProfilePreview from '../ProfilePreview/ProfilePreview.jsx';
-import { RedDiv, AvatarDiv, CommentDiv, Comment, LightTextA, XLightTextSpan, Icon, FlexContainer, LightTextSpan, ProfilePreviewContainer } from './CmtListItemStyle.js';
+import UsernameContainer from '../UsernameContainer.jsx';
+import AvatarContainer from '../AvatarContainer.jsx';
+
+import { CommentDiv, Lta, Xlt, FlexContainer, Lts, RedDiv } from './CmtListItemStyle.js';
 
 // CmtListItem
 class CmtListItem extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      // Toggle if user hovers, for <ProfilePreview /> rendering
-      isHovered: false
-    };
-
-    // fn bindings
-    this.onUserOrAvatarHover = this.onUserOrAvatarHover.bind(this);
     this.friendlyTimestamp = this.friendlyTimestamp.bind(this);
   }
 
-  // Generates formatted timestamp
   friendlyTimestamp (timestamp) {
     let min = 0;
     let sec = 0;
@@ -30,33 +24,30 @@ class CmtListItem extends React.Component {
     timestamp < 10 ? sec = '0' + timestamp.toString() : sec = timestamp;
 
     return `${min}:${sec}`;
-
-  }
-
-  onUserOrAvatarHover() {
-    this.setState({
-      isHovered: !this.state.isHovered
-    });
   }
 
   render() {
+    // FUV
+    let props = this.props;
     let cmt = this.props.cmt;
-    // console.log(cmt);
-    console.log(this.state.isHovered);
+    console.log(props.uid, props.aid, typeof props.uid);
 
     return (
       <FlexContainer>
 
-        <AvatarDiv className="valign-wrapper">
-          <Icon className="responsive-img circle" src={cmt.userData.profilePicture} />
-        </AvatarDiv>
+        <AvatarContainer aid={props.aid} cmt={cmt}/><span></span>
 
         <CommentDiv>
-          <RedDiv>
-            <div><LightTextA onMouseOver={this.onUserOrAvatarHover} href={cmt.userData.profileURL} target="_blank" >{cmt.userData.displayName}</LightTextA><XLightTextSpan> at </XLightTextSpan><LightTextA>{this.friendlyTimestamp(cmt.timeData.timestamp)}</LightTextA><XLightTextSpan>:</XLightTextSpan><LightTextSpan>{cmt.timeData.postDate}</LightTextSpan></div>
-          </RedDiv>
 
-          <RedDiv className="">{cmt.commentBody}</RedDiv>
+          <div>
+            <UsernameContainer uid={props.uid} cmt={cmt} />
+            <Xlt> at </Xlt>
+            <Lta>{this.friendlyTimestamp(cmt.timeData.timestamp)}</Lta>
+            <Xlt>:</Xlt>
+            <Lts>{cmt.timeData.postDate}</Lts>
+          </div>
+
+          <div>{cmt.commentBody}</div>
 
         </CommentDiv>
       </FlexContainer>
