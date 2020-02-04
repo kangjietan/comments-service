@@ -1,7 +1,9 @@
 // Setup
 import React from 'react';
-import Username from '../Username.jsx';
+import UsernameContainer from '../UsernameContainer.jsx';
 import ProfilePreview from '../ProfilePreview/ProfilePreview.jsx';
+
+import { Button, Popover, PopoverHeader, PopoverBody } from 'reactstrap';
 import { RedDiv, AvatarDiv, CommentDiv, Comment, LightTextA, Xlt, Icon, FlexContainer, Lts, ProfilePreviewContainer } from './CmtListItemStyle.js';
 
 // CmtListItem
@@ -11,11 +13,11 @@ class CmtListItem extends React.Component {
 
     this.state = {
       // Toggle if user hovers, for <ProfilePreview /> rendering
-      isHovered: false
+      popoverOpen: false
     };
 
     // fn bindings
-    this.onUserOrAvatarHover = this.onUserOrAvatarHover.bind(this);
+    this.toggle = this.toggle.bind(this);
     this.friendlyTimestamp = this.friendlyTimestamp.bind(this);
   }
 
@@ -34,30 +36,50 @@ class CmtListItem extends React.Component {
 
   }
 
-  onUserOrAvatarHover() {
+  toggle() {
     this.setState({
-      isHovered: !this.state.isHovered
+      popoverOpen: !this.state.popoverOpen
     });
   }
 
   render() {
     let cmt = this.props.cmt;
     // console.log(cmt);
-    console.log(this.state.isHovered);
+    console.log(this.state.popoverOpen);
 
     return (
       <FlexContainer>
 
-        <AvatarDiv trigger="click" placement="right" overlay={ProfilePreview} className="valign-wrapper avdiv">
-          <Icon onMouseOver={this.onUserOrAvatarHover} className="responsive-img circle" src={cmt.userData.profilePicture}/>
+        <div>
+          <Button id="testpop" type="button">
+        test pop
+          </Button>
+
+          <Popover placement="bottom" isOpen={this.state.popoverOpen} trigger="hover" target="testpop" toggle={this.toggle}>
+            <PopoverBody>
+              test 123
+            </PopoverBody>
+          </Popover>
+        </div>
+
+        <AvatarDiv className="valign-wrapper">
+          <Icon
+            onMouseOver={this.TODO}
+            className="responsive-img circle"
+            src={cmt.userData.profilePicture}
+          />
         </AvatarDiv>
 
         <CommentDiv>
           <RedDiv>
-            <Username className="usediv" handleHov={this.onUserOrAvatarHover} cmt={cmt} /> <Xlt> at </Xlt><LightTextA>{this.friendlyTimestamp(cmt.timeData.timestamp)}</LightTextA><Xlt>:</Xlt><Lts>{cmt.timeData.postDate}</Lts>
+            <UsernameContainer handleHov={this.TODO} cmt={cmt} />
+            <Xlt> at </Xlt>
+            <LightTextA>{this.friendlyTimestamp(cmt.timeData.timestamp)}</LightTextA>
+            <Xlt>:</Xlt>
+            <Lts>{cmt.timeData.postDate}</Lts>
           </RedDiv>
 
-          <RedDiv className="">{cmt.commentBody}</RedDiv>
+          <RedDiv>{cmt.commentBody}</RedDiv>
 
         </CommentDiv>
       </FlexContainer>
