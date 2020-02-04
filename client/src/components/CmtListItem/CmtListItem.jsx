@@ -40,17 +40,19 @@ class CmtListItem extends React.Component {
   }
 
   render() {
+    let props = this.props;
     let cmt = this.props.cmt;
+    console.log('render lifecycle intiated!');
     console.log(this.state.popoverOpen);
-
+    console.log(props.uid, props.aid);
     return (
       <FlexContainer>
 
-        <AvatarContainer cmt={cmt}/>
+        <AvatarContainer aid={props.aid} cmt={cmt}/>
 
         <CommentDiv>
           <div>
-            <UsernameContainer cmt={cmt} />
+            <UsernameContainer uid={props.uid} cmt={cmt} />
             <Xlt> at </Xlt>
             <Lta>{this.friendlyTimestamp(cmt.timeData.timestamp)}</Lta>
             <Xlt>:</Xlt>

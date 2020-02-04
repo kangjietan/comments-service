@@ -13,8 +13,12 @@ class ProfilePreview extends React.Component {
 
     return (
       <div>
-        <Popover placement="bottom" trigger="hover" isOpen={popoverOpen} target="Popover1" toggle={toggle}>
-          <PopoverHeader>Popover Title</PopoverHeader>
+        <Popover
+          placement="bottom"
+          trigger="hover"
+          isOpen={popoverOpen}
+          target="Popover1"
+          toggle={this.props.toggle}>
           <PopoverBody>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</PopoverBody>
         </Popover>
       </div>

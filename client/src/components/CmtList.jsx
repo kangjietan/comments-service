@@ -60,7 +60,7 @@ class CmtList extends React.Component {
 
         <CommentDiv>
           {this.state.comments.map((el, idx) => {
-            return <CmtListItem cmt={el} key={idx} />;
+            return <CmtListItem cmt={el} key={idx} aid={`${idx}A`} uid={`${idx}U`} />;
           })}
         </CommentDiv>
       </div>
