@@ -22,7 +22,8 @@ class CmtList extends React.Component {
 
     this.state = {
       comments: [],
-      totalComments: null
+      totalComments: null,
+      blockFirstRender: false
     };
 
     this.getComments = this.getComments.bind(this);
@@ -52,6 +53,7 @@ class CmtList extends React.Component {
   }
 
   render () {
+    console.log('lifecycle from CmtList intiated!');
     return (
       <div>
         <TotalCmts>
@@ -60,7 +62,7 @@ class CmtList extends React.Component {
 
         <CommentDiv>
           {this.state.comments.map((el, idx) => {
-            return <CmtListItem cmt={el} key={idx} aid={`${idx}A`} uid={`${idx}U`} />;
+            return <CmtListItem cmt={el} key={idx} aid={`A${idx}`} uid={`U${idx}`} />;
           })}
         </CommentDiv>
       </div>

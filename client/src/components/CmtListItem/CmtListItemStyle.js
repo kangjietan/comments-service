@@ -10,7 +10,7 @@ export const FlexContainer = styled.div`
   justify-content: flex-start;
   flex-flow: row no-wrap;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 `;
 
 export const CommentDiv = styled.div`
