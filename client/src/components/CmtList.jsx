@@ -1,9 +1,10 @@
 // Setup
 import React from 'react';
-import ProfilePreview from '../components/ProfilePreview/ProfilePreview.jsx';
-import CmtListItem from './CmtListItem/CmtListItem.jsx';
 import styled from 'styled-components';
+
+import CmtListItem from './CmtListItem/CmtListItem.jsx';
 import { CommentDiv } from './CmtListItem/CmtListItemStyle.js';
+
 const axios = require('axios');
 
 const TotalCmts = styled.div`
@@ -34,7 +35,6 @@ class CmtList extends React.Component {
     this.getComments();
   }
 
-  // Get all comments for song (bugfix on Trello)
   getComments() {
     axios.get('/api/comments')
       .then((res) => {
@@ -45,7 +45,6 @@ class CmtList extends React.Component {
       });
   }
 
-  // Calculate total comments
   calcTotalComments(res) {
     this.setState({
       totalComments: res[0].comments.length

@@ -2,9 +2,7 @@
 import React from 'react';
 import UsernameContainer from '../UsernameContainer.jsx';
 import AvatarContainer from '../AvatarContainer.jsx';
-import ProfilePreview from '../ProfilePreview/ProfilePreview.jsx';
 
-import { Button, Popover, PopoverHeader, PopoverBody } from 'reactstrap';
 import { CommentDiv, Lta, Xlt, FlexContainer, Lts, RedDiv } from './CmtListItemStyle.js';
 
 // CmtListItem
@@ -12,11 +10,6 @@ class CmtListItem extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      popoverOpen: false
-    };
-
-    this.toggle = this.toggle.bind(this);
     this.friendlyTimestamp = this.friendlyTimestamp.bind(this);
   }
 
@@ -33,13 +26,6 @@ class CmtListItem extends React.Component {
     return `${min}:${sec}`;
   }
 
-  toggle() {
-    this.setState({
-      popoverOpen: !this.state.popoverOpen
-    });
-  }
-
-
   render() {
     // FUV
     let props = this.props;
@@ -49,23 +35,12 @@ class CmtListItem extends React.Component {
     return (
       <FlexContainer>
 
-        <Button className="hov-btn" id={props.aid}>ok</Button>
-
         <AvatarContainer aid={props.aid} cmt={cmt}/><span></span>
 
-        <Popover
-          placement="bottom"
-          trigger="click"
-          target={props.aid}
-          isOpen={this.state.popoverOpen}
-          toggle={props.toggle}>
-          <PopoverBody>Hello World!</PopoverBody>
-        </Popover>
-
         <CommentDiv>
+
           <div>
             <UsernameContainer uid={props.uid} cmt={cmt} />
-
             <Xlt> at </Xlt>
             <Lta>{this.friendlyTimestamp(cmt.timeData.timestamp)}</Lta>
             <Xlt>:</Xlt>
@@ -79,19 +54,5 @@ class CmtListItem extends React.Component {
     );
   }
 }
-
-/*
-
-
-        <Popover
-          placement="bottom"
-          trigger="hover"
-          isOpen={state.popoverOpen}
-          toggle={this.props.toggle}>
-          <PopoverBody>Hello World!</PopoverBody>
-        </Popover>
-
-
-*/
 
 export default CmtListItem;

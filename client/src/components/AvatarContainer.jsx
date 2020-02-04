@@ -26,7 +26,6 @@ class AvatarContainer extends React.Component {
           className="responsive-img circle"
           src={props.cmt.userData.profilePicture}
         />
-
       </AvatarDiv>
     );
   }
