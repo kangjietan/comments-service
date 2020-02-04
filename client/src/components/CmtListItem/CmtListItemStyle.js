@@ -13,16 +13,6 @@ export const FlexContainer = styled.div`
   margin-bottom: 10px;
 `;
 
-export const ProfilePreviewContainer = styled.div`
-
-`;
-
-export const AvatarDiv = styled.div`
-  padding-top: 4px;
-  align-self: flex-start;
-  flex: 0 0 45px;
-`;
-
 export const CommentDiv = styled.div`
   align-self: flex-start;
   flex-grow: 1;
@@ -48,9 +38,4 @@ export const Lts = styled.span`
 export const Xlt = styled.span`
   color: #ccc;
   font-size: 11px;
-`;
-
-export const Icon = styled.img`
-  width: 35px;
-  height: 35px;
 `;

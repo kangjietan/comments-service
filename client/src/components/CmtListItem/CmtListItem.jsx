@@ -1,10 +1,11 @@
 // Setup
 import React from 'react';
 import UsernameContainer from '../UsernameContainer.jsx';
+import AvatarContainer from '../AvatarContainer.jsx';
 import ProfilePreview from '../ProfilePreview/ProfilePreview.jsx';
 
-import { Button, Popover, PopoverHeader, PopoverBody } from 'reactstrap';
-import { RedDiv, AvatarDiv, CommentDiv, Comment, LightTextA, Xlt, Icon, FlexContainer, Lts, ProfilePreviewContainer } from './CmtListItemStyle.js';
+import { Button, Popover, PopoverBody } from 'reactstrap';
+import { RedDiv, CommentDiv, LightTextA, Xlt, FlexContainer, Lts } from './CmtListItemStyle.js';
 
 // CmtListItem
 class CmtListItem extends React.Component {
@@ -62,13 +63,7 @@ class CmtListItem extends React.Component {
           </Popover>
         </div>
 
-        <AvatarDiv className="valign-wrapper">
-          <Icon
-            onMouseOver={this.TODO}
-            className="responsive-img circle"
-            src={cmt.userData.profilePicture}
-          />
-        </AvatarDiv>
+        <AvatarContainer cmt={cmt}/>
 
         <CommentDiv>
           <RedDiv>

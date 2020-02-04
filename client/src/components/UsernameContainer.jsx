@@ -3,7 +3,12 @@ import { LightTextA } from './CmtListItem/CmtListItemStyle.js';
 
 const UsernameContainer = (props) => (
   <span>
-    <LightTextA onMouseOver={props.handleHov} href={props.cmt.userData.profileURL}target="_blank">{props.cmt.userData.displayName}</LightTextA>
+    <LightTextA
+      href={props.cmt.userData.profileURL}
+      target="_blank"
+    >
+      {props.cmt.userData.displayName}
+    </LightTextA>
   </span>
 );
 
