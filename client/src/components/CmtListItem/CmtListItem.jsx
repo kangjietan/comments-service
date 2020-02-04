@@ -5,7 +5,7 @@ import AvatarContainer from '../AvatarContainer.jsx';
 import ProfilePreview from '../ProfilePreview/ProfilePreview.jsx';
 
 import { Button, Popover, PopoverBody } from 'reactstrap';
-import { RedDiv, CommentDiv, LightTextA, Xlt, FlexContainer, Lts } from './CmtListItemStyle.js';
+import { CommentDiv, Lta, Xlt, FlexContainer, Lts, RedDiv } from './CmtListItemStyle.js';
 
 // CmtListItem
 class CmtListItem extends React.Component {
@@ -13,16 +13,13 @@ class CmtListItem extends React.Component {
     super(props);
 
     this.state = {
-      // Toggle if user hovers, for <ProfilePreview /> rendering
       popoverOpen: false
     };
 
-    // fn bindings
     this.toggle = this.toggle.bind(this);
     this.friendlyTimestamp = this.friendlyTimestamp.bind(this);
   }
 
-  // Generates formatted timestamp
   friendlyTimestamp (timestamp) {
     let min = 0;
     let sec = 0;
@@ -34,7 +31,6 @@ class CmtListItem extends React.Component {
     timestamp < 10 ? sec = '0' + timestamp.toString() : sec = timestamp;
 
     return `${min}:${sec}`;
-
   }
 
   toggle() {
@@ -45,36 +41,23 @@ class CmtListItem extends React.Component {
 
   render() {
     let cmt = this.props.cmt;
-    // console.log(cmt);
     console.log(this.state.popoverOpen);
 
     return (
       <FlexContainer>
 
-        <div>
-          <Button id="testpop" type="button">
-        test pop
-          </Button>
-
-          <Popover placement="bottom" isOpen={this.state.popoverOpen} trigger="hover" target="testpop" toggle={this.toggle}>
-            <PopoverBody>
-              test 123
-            </PopoverBody>
-          </Popover>
-        </div>
-
         <AvatarContainer cmt={cmt}/>
 
         <CommentDiv>
-          <RedDiv>
-            <UsernameContainer handleHov={this.TODO} cmt={cmt} />
+          <div>
+            <UsernameContainer cmt={cmt} />
             <Xlt> at </Xlt>
-            <LightTextA>{this.friendlyTimestamp(cmt.timeData.timestamp)}</LightTextA>
+            <Lta>{this.friendlyTimestamp(cmt.timeData.timestamp)}</Lta>
             <Xlt>:</Xlt>
             <Lts>{cmt.timeData.postDate}</Lts>
-          </RedDiv>
+          </div>
 
-          <RedDiv>{cmt.commentBody}</RedDiv>
+          <div>{cmt.commentBody}</div>
 
         </CommentDiv>
       </FlexContainer>

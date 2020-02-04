@@ -18,7 +18,7 @@ export const CommentDiv = styled.div`
   flex-grow: 1;
 `;
 
-export const LightTextA = styled.a`
+export const Lta = styled.span`
   color: #999;
   cursor: pointer;
   font-size: 12px;

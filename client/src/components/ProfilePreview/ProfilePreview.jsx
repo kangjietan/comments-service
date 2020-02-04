@@ -1,38 +1,34 @@
 import React from 'react';
 import { ProfileContainer, FollowButton } from './ProfilePreview.js';
+import { Button, Popover, PopoverBody } from 'reactstrap';
 
 class ProfilePreview extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      isFollowing: false
-    };
   }
 
+
+
   render() {
-    let i = this.state;
-    console.log(i.isFollowing);
 
     return (
-      <div type="div" className="btn btn-secondary" data-trigger="hover" data-container="body" data-toggle="popover" data-placement="bottom" data-content="hello this be a test or sum!">
-        Popover
+      <div>
+        <Popover placement="bottom" trigger="hover" isOpen={popoverOpen} target="Popover1" toggle={toggle}>
+          <PopoverHeader>Popover Title</PopoverHeader>
+          <PopoverBody>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</PopoverBody>
+        </Popover>
       </div>
     );
   }
 }
 
 /*
+TAG ON THE PROFILE PREVIEW:
 
-      <div type="div" className="btn btn-secondary" data-trigger="hover" data-container="body" data-toggle="popover" data-placement="bottom" data-content="hello this be a test or sum!">
-        Popover
-      </div>
+<Button id="Popover1" type="button">
+  Launch Popover Button
+</Button>
 
-
-<ProfileContainer className="card-panel teal">
-        <div>hello</div>
-        <button><i className="material-icons">person_add</i>Follow</button>
-      </ProfileContainer>
 
 */
 
