@@ -12,26 +12,13 @@ class CommentGen {
         followCount: faker.random.number(),
       },
       timeData: {
-        postDate: `${this.monthGen()}/${this.dateGen()}/${this.yearGen()}`,
+        postDate: faker.date.recent(750),
         timestamp: faker.random.number(180),
       },
       commentBody: faker.lorem.sentences()
     };
   }
 
-  dateGen () {
-    let max = 30;
-    return Math.floor(Math.random() * Math.floor(max));
-  }
-
-  monthGen () {
-    let max = 13;
-    return Math.floor(Math.random() * Math.floor(max));
-  }
-
-  yearGen () {
-    return faker.random.number( {min: 2018, max: 2020} );
-  }
 }
 
 let output = (z) => {
