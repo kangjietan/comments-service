@@ -4,7 +4,7 @@ import UsernameContainer from '../UsernameContainer.jsx';
 import AvatarContainer from '../AvatarContainer.jsx';
 const moment = require('moment');
 
-import { CommentDiv, Lta, Xlt, FlexContainer, Lts, RedDiv } from './CmtListItemStyle.js';
+import { CommentDiv, Lta, Xlt, FlexContainer, Lts, CommentBody } from './CmtListItemStyle.js';
 
 // CmtListItem
 class CmtListItem extends React.Component {
@@ -53,7 +53,7 @@ class CmtListItem extends React.Component {
             <Lts>{this.friendlyDate(cmt.timeData.postDate)}</Lts>
           </div>
 
-          <div>{cmt.commentBody}</div>
+          <CommentBody>{cmt.commentBody}</CommentBody>
 
         </CommentDiv>
       </FlexContainer>
