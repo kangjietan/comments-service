@@ -13,6 +13,11 @@ const TotalCmts = styled.div`
   border-bottom: 1px solid #d1d1d1;
 `;
 
+const Cmti = styled.i`
+  padding-left: 4px;
+  font-size: 16px;
+`;
+
 // Identify content containers for or infinite scroll
 const CmtContainer = styled.div`
 `;
@@ -56,7 +61,7 @@ class CmtList extends React.Component {
     return (
       <div>
         <TotalCmts>
-          <span><i className="tiny material-icons" id="cmt-i" >chat_bubble</i> {this.state.totalComments} comments</span>
+          <span><Cmti className="material-icons md-48" id="cmt-i" >chat_bubble</Cmti> {this.state.totalComments} comments</span>
         </TotalCmts>
 
         <CommentDiv>

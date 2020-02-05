@@ -1,9 +1,5 @@
 import styled from 'styled-components';
 
-export const RedDiv = styled.div`
-  border: solid 1px red;
-`;
-
 export const FlexContainer = styled.div`
   display: flex;
   flex-direction: row;
@@ -16,6 +12,10 @@ export const FlexContainer = styled.div`
 export const CommentDiv = styled.div`
   align-self: flex-start;
   flex-grow: 1;
+`;
+
+export const CommentBody = styled.div`
+  padding-right: 13%;
 `;
 
 export const Lta = styled.span`
