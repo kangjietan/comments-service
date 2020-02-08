@@ -13,8 +13,11 @@
   "scripts": {
     "react-dev": "webpack -d --watch",
     "start": "nodemon server/index.js",
+    "start2": "nodemon server/index.js",
     "mongo-seed": "node db/seedScript.js",
-    "test": "jest"
+    "test": "jest",
+    "build": "webpack",
+    "seedStart": "npm run mongo-seed & npm run start2"
   },
   "dependencies": {
     "axios": "^0.19.2",
