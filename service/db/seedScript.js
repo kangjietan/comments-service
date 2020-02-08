@@ -1,6 +1,5 @@
 const commentModel = require('./index.js');
 var faker = require('faker');
-
 class CommentGen {
   constructor() {
     this.data = {
@@ -18,23 +17,17 @@ class CommentGen {
       commentBody: faker.lorem.sentences()
     };
   }
-
 }
-
 let output = (z) => {
   let res = [];
-
   for (let i = 0; i < z; i++) {
     let temp = new CommentGen();
     res.push(temp.data);
   }
-
   return res;
 };
-
 commentModel.create({
   songId: 1,
   comments: output(35)
 });
-
 console.log('The database has been populated.');
