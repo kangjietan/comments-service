@@ -14,7 +14,7 @@ app.use(express.static(path.join(__dirname, '../client/public')));
 app.use(morgan('dev'));
 
 app.get('/bundle.js', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/bundle.js'));
+  res.sendFile(path.join(__dirname, '../client/public/bundle.js'));
 });
 
 // GET requests (routes/routesGET.js)
