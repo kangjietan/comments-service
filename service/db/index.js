@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 // Connect to database
 mongoose.connect(
-  'mongodb://localhost:27017/soundclone',
+  'mongodb://datbase/soundclone',
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,

@@ -41,7 +41,7 @@ class CmtList extends React.Component {
   }
 
   getComments() {
-    axios.get('/api/comments')
+    axios.get('/http://18.144.144.76:3001/api/comments')
       .then((res) => {
         this.setState({
           comments: res.data[0].comments
