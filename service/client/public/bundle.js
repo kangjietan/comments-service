@@ -100,7 +100,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _CmtList_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CmtList.jsx */ "./client/src/components/CmtList.jsx");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  padding: 4% 40% 10px 3%;\n  font: 12px/1.4 'Lucida Grande';\n  color: #333;\n"]);
+  var data = _taggedTemplateLiteral(["\n  /* padding: 4% 40% 10px 3%; */\n  font: 12px/1.4 'Lucida Grande';\n  color: #333;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -322,7 +322,7 @@ function (_React$Component) {
     value: function getComments() {
       var _this2 = this;
 
-      axios.get('/api/comments').then(function (res) {
+      axios.get('http://18.144.144.76:3001/api/comments').then(function (res) {
         _this2.setState({
           comments: res.data[0].comments
         });
